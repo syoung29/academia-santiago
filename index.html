@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santiago Young | Academia de Exactas & Economía</title>
+    <title>Santiago Young | Clases Particulares de Exactas & Economía</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
@@ -11,7 +11,7 @@
         .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
         .card-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); }
         .selected-glow { box-shadow: 0 0 25px rgba(59, 130, 246, 0.5); border: 2px solid #3b82f6 !important; transform: scale(1.03); }
-        .price-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .price-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); background: white; }
     </style>
 </head>
 <body class="p-0">
@@ -19,104 +19,121 @@
     <header class="hero-gradient text-white pt-20 pb-16 px-6 text-center">
         <div class="max-w-4xl mx-auto">
             <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 uppercase">SANTIAGO YOUNG</h1>
-            <p class="text-blue-400 text-lg md:text-xl font-bold uppercase tracking-[0.2em] mb-4">Secundaria • Ingreso • Universidad</p>
+            <p class="text-blue-400 text-lg md:text-xl font-bold uppercase tracking-[0.2em] mb-4">Matemática • Física • Química • Biología • Economía</p>
             <div class="h-1 w-24 bg-blue-500 mx-auto mb-8 rounded-full"></div>
             <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed font-light italic">
-                "Apoyo pedagógico y rigor técnico en Matemática, Física, Química, Biología y Economía."
+                "Nivel secundario, ingresos y materias de grado. Clases presenciales en oficina propia y modalidad online con pizarrón digital."
             </p>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-6 -mt-10 mb-20">
         
-        <section class="bg-white p-8 md:p-12 rounded-[2.5rem] card-shadow border border-slate-100 mb-16 relative z-10">
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 relative z-10">
+            <div class="bg-white p-8 rounded-[2rem] card-shadow border border-slate-100 flex items-center gap-6">
+                <div class="text-4xl">📍</div>
+                <div>
+                    <h3 class="font-black uppercase text-xs tracking-widest text-blue-600 mb-1">Oficina Presencial</h3>
+                    <p class="text-slate-900 font-bold text-lg leading-tight">Ciudad de la Paz y Congreso</p>
+                    <p class="text-slate-500 text-xs mt-1 italic">Belgrano / Colegiales, CABA.</p>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[2rem] card-shadow border border-slate-100 flex items-center gap-6">
+                <div class="text-4xl">💻</div>
+                <div>
+                    <h3 class="font-black uppercase text-xs tracking-widest text-blue-600 mb-1">Modalidad Online</h3>
+                    <p class="text-slate-900 font-bold text-lg leading-tight">Clases por Meet / Zoom</p>
+                    <p class="text-slate-500 text-xs mt-1 italic">Uso de Tablet de alta precisión y apuntes en PDF.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 md:p-12 rounded-[2.5rem] card-shadow border border-slate-100 mb-16">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-black mb-2 tracking-tight text-slate-900 text-center uppercase">Calculador de Plan Ideal</h2>
-                <p class="text-slate-500 text-center text-sm mb-10">Seleccioná tu situación para obtener la recomendación técnica.</p>
+                <h2 class="text-2xl font-black mb-8 tracking-tight text-slate-900 text-center uppercase">Calculador de Presupuesto</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div>
-                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-2">Nivel / Dificultad</label>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-2">Objetivo Académico</label>
                         <select id="exam-difficulty" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-bold outline-none focus:ring-2 focus:ring-blue-500 transition-all">
-                            <option value="baja">Secundaria: Apoyo / Tarea</option>
-                            <option value="media">Secundaria: Examen Parcial</option>
-                            <option value="media_u">Ingreso: ITBA / CBC / UBA XXI</option>
-                            <option value="alta">Universidad: Finales / Materias Filtro</option>
+                            <option value="baja">Secundaria: Apoyo General</option>
+                            <option value="media">Secundaria: Examen / Previa</option>
+                            <option value="media_u">Ingreso Universitario (ITBA/CBC)</option>
+                            <option value="alta">Universidad: Materias de Grado</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-2">Urgencia</label>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 ml-2">Urgencia del Examen</label>
                         <select id="exam-time" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-bold outline-none focus:ring-2 focus:ring-blue-500 transition-all">
-                            <option value="lejos">+15 días de margen</option>
+                            <option value="lejos">Con margen (+15 días)</option>
                             <option value="cerca">Próxima semana</option>
-                            <option value="urgente">¡Urgente! (Menos de 72hs)</option>
+                            <option value="urgente">Menos de 72 horas</option>
                         </select>
                     </div>
                 </div>
 
                 <button onclick="suggestPlan()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 rounded-2xl transition-all active:scale-[0.98] shadow-lg uppercase tracking-widest text-sm mb-6">
-                    Calcular Recomendación
+                    Sugerir Plan de Trabajo
                 </button>
                 
-                <div id="plan-result" class="hidden p-6 bg-blue-50 rounded-2xl text-sm text-blue-900 font-bold text-center border border-blue-100 animate-in fade-in slide-in-from-bottom-4 duration-500"></div>
+                <div id="plan-result" class="hidden p-6 bg-blue-50 rounded-2xl text-sm text-blue-900 font-bold text-center border border-blue-100 italic"></div>
             </div>
         </section>
 
-        <h2 class="text-3xl font-black text-center mb-12 uppercase tracking-tighter">Inversión Académica 2026</h2>
+        <h2 class="text-3xl font-black text-center mb-12 uppercase tracking-tighter">Planes Disponibles</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             
-            <div id="pack-individual" class="price-card bg-white p-10 rounded-[2.5rem] border border-slate-100 card-shadow text-center flex flex-col">
-                <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6">Sesión Única</span>
+            <div id="pack-individual" class="price-card p-10 rounded-[2.5rem] border border-slate-100 card-shadow text-center flex flex-col">
+                <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6">Clase Suelta</span>
                 <div class="mb-8">
                     <span class="text-5xl font-black text-slate-900 leading-none">$18.000</span>
-                    <p class="text-slate-400 font-bold mt-2">Valor Hora</p>
+                    <p class="text-slate-400 font-bold mt-2 italic text-sm">Valor por hora</p>
                 </div>
                 <ul class="text-left text-sm text-slate-500 space-y-4 mb-8 flex-grow">
-                    <li class="flex items-center gap-2 font-medium">✓ Dudas puntuales / Tarea</li>
-                    <li class="flex items-center gap-2 font-medium">✓ Pizarrón digital PDF</li>
-                    <li class="flex items-center gap-2 font-medium">✓ Sin compromiso mensual</li>
+                    <li>✓ Nivel secundario / Tarea</li>
+                    <li>✓ Resolución de dudas rápidas</li>
+                    <li>✓ Apuntes PDF de la sesión</li>
                 </ul>
             </div>
 
-            <div id="pack-examen" class="price-card bg-white p-10 rounded-[2.5rem] border-2 border-slate-100 text-center relative card-shadow flex flex-col">
-                <div id="label-examen" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-6 py-1.5 rounded-full font-black uppercase tracking-widest shadow-xl">Pack Óptimo</div>
-                <span class="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-6">Preparación Examen</span>
+            <div id="pack-examen" class="price-card p-10 rounded-[2.5rem] border-2 border-slate-100 text-center relative card-shadow flex flex-col">
+                <div id="label-examen" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-6 py-1.5 rounded-full font-black uppercase tracking-widest shadow-xl">Más Solicitado</div>
+                <span class="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-6">Preparación Intensiva</span>
                 <div class="mb-8">
                     <span class="text-5xl font-black text-slate-900 leading-none">$64.000</span>
-                    <p class="text-blue-600 font-black mt-2">$16.000 / Hora</p>
+                    <p class="text-blue-600 font-black mt-2 italic text-sm">$16.000 / hora</p>
                 </div>
                 <ul class="text-left text-sm text-slate-700 space-y-4 mb-8 font-semibold flex-grow">
-                    <li class="flex items-center gap-2">✓ Pack 4 Horas</li>
-                    <li class="flex items-center gap-2">✓ Práctica intensiva</li>
-                    <li class="flex items-center gap-2">✓ Prioridad en agenda</li>
+                    <li>✓ Pack 4 Horas (Uso flexible)</li>
+                    <li>✓ Guías de ejercicios completas</li>
+                    <li>✓ Seguimiento preventivo</li>
                 </ul>
             </div>
 
-            <div id="pack-anual" class="price-card bg-white p-10 rounded-[2.5rem] border border-slate-100 card-shadow text-center flex flex-col">
-                <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6">Seguimiento ITBA</span>
+            <div id="pack-anual" class="price-card p-10 rounded-[2.5rem] border border-slate-100 card-shadow text-center flex flex-col">
+                <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6">Seguimiento Regular</span>
                 <div class="mb-8">
                     <span class="text-5xl font-black text-slate-900 leading-none">$120.000</span>
-                    <p class="text-slate-400 font-black mt-2">$15.000 / Hora</p>
+                    <p class="text-slate-400 font-black mt-2 italic text-sm">$15.000 / hora</p>
                 </div>
                 <ul class="text-left text-sm text-slate-500 space-y-4 mb-8 flex-grow">
-                    <li class="flex items-center gap-2 font-medium">✓ Pack 8 Horas</li>
-                    <li class="flex items-center gap-2 font-medium">✓ Nivel Universitario</li>
-                    <li class="flex items-center gap-2 font-medium">✓ Consultas vía WhatsApp</li>
+                    <li>✓ Pack 8 Horas mensuales</li>
+                    <li>✓ Ideal Universidad / Ingreso ITBA</li>
+                    <li>✓ Prioridad absoluta de agenda</li>
                 </ul>
             </div>
-
         </div>
 
         <footer class="hero-gradient rounded-[3rem] p-12 text-center text-white shadow-2xl">
-            <h3 class="text-2xl font-black mb-6 uppercase tracking-tight">¿Listo para empezar?</h3>
-            <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20vi%20tu%20web%20y%20quería%20consultarte..." 
+            <h3 class="text-2xl font-black mb-8 uppercase tracking-tight italic">¿Empezamos?</h3>
+            <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20vi%20tu%20web%20y%20quería%20consultarte%20por%20clases..." 
                class="inline-block bg-green-500 hover:bg-green-600 text-white px-12 py-5 rounded-full font-black text-sm uppercase tracking-widest shadow-xl transition-all hover:scale-105 active:scale-95">
-                Enviar WhatsApp Directo
+                Consultar por WhatsApp
             </a>
-            <div class="mt-12 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] opacity-50 font-black uppercase tracking-[0.2em] gap-4">
+            <div class="mt-12 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] opacity-40 font-black uppercase tracking-[0.2em] gap-4">
                 <p>santiyoung29@gmail.com</p>
-                <p>Belgrano • Núñez • Online</p>
-                <p>@santiyoung</p>
+                <p>Oficina Presencial: Ciudad de la Paz y Congreso</p>
+                <p>Buenos Aires, Argentina</p>
             </div>
         </footer>
     </main>
@@ -126,38 +143,25 @@
             const diff = document.getElementById('exam-difficulty').value;
             const time = document.getElementById('exam-time').value;
             const res = document.getElementById('plan-result');
-            
-            const packs = {
-                ind: document.getElementById('pack-individual'),
-                exa: document.getElementById('pack-examen'),
-                anu: document.getElementById('pack-anual')
-            };
+            const packs = { ind: document.getElementById('pack-individual'), exa: document.getElementById('pack-examen'), anu: document.getElementById('pack-anual') };
             const label = document.getElementById('label-examen');
 
-            // Reset visual
             Object.values(packs).forEach(p => p.classList.remove('selected-glow'));
             label.classList.add('hidden');
             res.classList.remove('hidden');
 
-            let target;
             if (time === 'urgente') {
-                res.innerText = "🚨 RECOMENDACIÓN: SESIÓN INDIVIDUAL. Ante urgencias de menos de 72hs, lo mejor es una clase puntual para resolver dudas críticas.";
-                target = packs.ind;
+                res.innerText = "Sugerencia: Clase Individual. Por la proximidad del examen, una sesión intensiva de resolución es lo más efectivo.";
+                packs.ind.classList.add('selected-glow');
             } else if (diff === 'alta' || diff === 'media_u') {
-                res.innerText = "📚 RECOMENDACIÓN: SEGUIMIENTO MENSUAL (8HS). Para niveles universitarios o ingresos, la constancia es la única forma de asegurar el resultado.";
-                target = packs.anu;
-            } else if (diff === 'media' || time === 'cerca') {
-                res.innerText = "🎯 RECOMENDACIÓN: PACK EXAMEN (4HS). Tenés el tiempo justo para barrer la guía de ejercicios y llegar con confianza.";
-                target = packs.exa;
-                label.classList.remove('hidden');
+                res.innerText = "Sugerencia: Pack de 8 Horas. Los contenidos universitarios requieren un seguimiento constante para asegurar el aprobado.";
+                packs.anu.classList.add('selected-glow');
             } else {
-                res.innerText = "✅ RECOMENDACIÓN: SESIÓN INDIVIDUAL. Para apoyo escolar básico o tareas simples, con una hora por consulta es suficiente.";
-                target = packs.ind;
+                res.innerText = "Sugerencia: Pack de 4 Horas. Ideal para barrer los temas del examen con tiempo y práctica suficiente.";
+                packs.exa.classList.add('selected-glow');
+                label.classList.remove('hidden');
             }
-
-            // Efecto visual
-            target.classList.add('selected-glow');
-            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            res.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>
 </body>
