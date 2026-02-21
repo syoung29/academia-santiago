@@ -11,6 +11,8 @@
         .hero-bg { background-color: #111827; }
         .card { background: white; border-radius: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s ease; }
         .selected { border: 2px solid #2563eb; transform: scale(1.02); }
+        .btn-whatsapp { background-color: #16a34a; color: white; padding: 0.75rem; border-radius: 0.75rem; font-weight: 700; font-size: 0.875rem; display: block; margin-top: 1.5rem; transition: all 0.2s; }
+        .btn-whatsapp:hover { background-color: #15803d; transform: translateY(-2px); }
     </style>
 </head>
 <body class="p-0">
@@ -50,7 +52,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div>
                     <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 ml-1">Nivel de estudio</label>
-                    <select id="diff" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium text-sm">
+                    <select id="diff" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium text-sm text-gray-700">
                         <option value="baja">Secundaria: Apoyo / Tarea</option>
                         <option value="media">Secundaria: Examen / Previa</option>
                         <option value="alta">Ingreso o Universidad</option>
@@ -58,7 +60,7 @@
                 </div>
                 <div>
                     <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 ml-1">Tiempo disponible</label>
-                    <select id="time" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium text-sm">
+                    <select id="time" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium text-sm text-gray-700">
                         <option value="extra">A largo plazo (Sin fecha fija)</option>
                         <option value="lejos">Con margen (+15 días)</option>
                         <option value="urgente">Próximos días / Urgente</option>
@@ -73,59 +75,59 @@
             <div id="resultado" class="hidden mt-6 p-4 bg-blue-50 text-blue-800 rounded-xl text-center font-bold italic border border-blue-100"></div>
         </section>
 
-        <h2 class="text-2xl font-black text-center mb-10 uppercase tracking-tighter text-gray-700">Planes y Precios</h2>
+        <h2 class="text-2xl font-black text-center mb-10 uppercase tracking-tighter text-gray-700">Modalidades y Packs</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             
             <div id="p1" class="card p-8 text-center flex flex-col">
                 <p class="text-xs font-bold text-gray-400 uppercase mb-4 tracking-widest">Clase Única</p>
-                <div class="mb-6">
-                    <span class="text-4xl font-black text-gray-900">$20.000</span>
-                    <p class="text-gray-500 text-sm mt-1 font-medium italic">por hora</p>
+                <div class="mb-4">
+                    <span class="text-2xl font-black text-gray-900">Consultar Valor</span>
                 </div>
-                <ul class="text-sm text-gray-500 space-y-2 mb-8 flex-grow">
+                <ul class="text-sm text-gray-500 space-y-2 mb-4 flex-grow">
                     <li>Dudas puntuales</li>
                     <li>Resolución de ejercicios</li>
                     <li>Apuntes de la clase</li>
                 </ul>
+                <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20quería%20consultar%20el%20valor%20de%20una%20clase%20única..." class="btn-whatsapp">Consultar</a>
             </div>
 
             <div id="p2" class="card p-8 text-center flex flex-col relative">
-                <div id="pop-examen" class="hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-4 py-1 rounded-full font-bold uppercase tracking-tighter text-center">Recomendado</div>
+                <div id="pop-examen" class="hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-4 py-1 rounded-full font-bold uppercase tracking-tighter text-center">Pack Sugerido</div>
                 <p class="text-xs font-bold text-blue-600 uppercase mb-4 tracking-widest">Pack Examen</p>
-                <div class="mb-6">
-                    <span class="text-4xl font-black text-gray-900">$76.000</span>
-                    <p class="text-blue-600 text-sm font-bold mt-1 italic">$19.000 x hora</p>
+                <div class="mb-4">
+                    <span class="text-2xl font-black text-gray-900">Valor con Descuento</span>
                 </div>
-                <ul class="text-sm text-gray-700 space-y-2 mb-8 font-medium flex-grow text-center">
+                <ul class="text-sm text-gray-700 space-y-2 mb-4 font-medium flex-grow">
                     <li>Pack 4 Horas</li>
                     <li>Preparación intensiva</li>
                     <li>Seguimiento de temas</li>
                 </ul>
+                <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20quería%20consultar%20por%20el%20Pack%20Examen%20de%204%20horas..." class="btn-whatsapp">Pedir Presupuesto</a>
             </div>
 
             <div id="p3" class="card p-8 text-center flex flex-col relative">
                 <div id="pop-mensual" class="hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-4 py-1 rounded-full font-bold uppercase tracking-tighter text-center border">Ideal CBC / ITBA</div>
                 <p class="text-xs font-bold text-blue-600 uppercase mb-4 tracking-widest">Acompañamiento</p>
-                <div class="mb-6">
-                    <span class="text-4xl font-black text-gray-900">$144.000</span>
-                    <p class="text-gray-500 text-sm mt-1 font-medium italic">$18.000 x hora</p>
+                <div class="mb-4">
+                    <span class="text-2xl font-black text-gray-900">Tarifa Mensual</span>
                 </div>
-                <ul class="text-sm text-gray-700 space-y-2 mb-8 font-medium flex-grow text-left">
+                <ul class="text-sm text-gray-700 space-y-2 mb-4 font-medium flex-grow text-left">
                     <li>8 Horas (2 por semana)</li>
                     <li>Seguimiento constante</li>
                     <li>Práctica continua</li>
                     <li>Ideal Análisis, Álgebra, Física</li>
                 </ul>
+                <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20quería%20consultar%20por%20el%20Acompañamiento%20Mensual%20de%208%20horas..." class="btn-whatsapp">Consultar Plan</a>
             </div>
         </div>
 
         <footer class="hero-bg rounded-3xl p-12 text-center text-white">
-            <h3 class="text-xl font-bold mb-8 italic">Consultas por horarios y fechas:</h3>
+            <h3 class="text-xl font-bold mb-8 italic">¿Dudas con los contenidos o fechas?</h3>
             <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20vi%20tu%20web%20y%20quería%20consultarte..." 
-               class="inline-block bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest transition-transform active:scale-95 shadow-xl">
+               class="inline-block bg-white text-gray-900 px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest transition-transform active:scale-95 shadow-xl">
                 Escribime al WhatsApp
             </a>
-            <div class="mt-12 pt-8 border-t border-gray-800 text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] flex flex-col md:flex-row justify-between gap-4 text-center">
+            <div class="mt-12 pt-8 border-t border-gray-800 text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] flex flex-col md:flex-row justify-between gap-4">
                 <p>santiyoung29@gmail.com</p>
                 <p>Oficina: Ciudad de la Paz y Congreso</p>
                 <p>Buenos Aires, Argentina</p>
@@ -148,9 +150,6 @@
             if (t === 'urgente') {
                 res.innerText = "Sugerencia: Una o dos clases sueltas para resolver lo más urgente.";
                 c1.classList.add('selected');
-            } else if (d === 'baja' && t === 'lejos') {
-                res.innerText = "Sugerencia: Con un par de clases sueltas cubrimos bien la tarea o el apoyo escolar.";
-                c1.classList.add('selected');
             } else if (d === 'alta' && t === 'extra') {
                 res.innerText = "Sugerencia: Acompañamiento mensual (2 veces por semana) para llevar la materia al día.";
                 c3.classList.add('selected');
@@ -159,6 +158,9 @@
                 res.innerText = "Sugerencia: Con un pack de 4 horas podemos preparar el examen con buen ritmo.";
                 c2.classList.add('selected');
                 pEx.classList.remove('hidden');
+            } else if (d === 'baja' && t === 'lejos') {
+                res.innerText = "Sugerencia: Con un par de clases sueltas cubrimos bien la tarea o el apoyo escolar.";
+                c1.classList.add('selected');
             } else {
                 res.innerText = "Sugerencia: Con un pack de 4 horas estamos bien para preparar los temas.";
                 c2.classList.add('selected');
