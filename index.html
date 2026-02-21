@@ -46,7 +46,7 @@
             </div>
         </section>
 
-        <section class="card p-8 mb-16">
+        <section class="card p-8 mb-8">
             <h2 class="text-xl font-bold mb-6 text-center text-gray-800 uppercase tracking-tight">¿Qué plan te conviene?</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -75,18 +75,22 @@
             <div id="resultado" class="hidden mt-6 p-4 bg-blue-50 text-blue-800 rounded-xl text-center font-bold italic border border-blue-100"></div>
         </section>
 
+        <p class="text-center text-gray-500 text-xs mb-16 px-4">
+            * Los planes son orientativos. Todo se puede <b>ajustar a conveniencia del alumno</b> según la complejidad de la materia o la carga horaria necesaria.
+        </p>
+
         <h2 class="text-2xl font-black text-center mb-10 uppercase tracking-tighter text-gray-700">Modalidades y Packs</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             
             <div id="p1" class="card p-8 text-center flex flex-col">
-                <p class="text-xs font-bold text-gray-400 uppercase mb-4 tracking-widest">Clase Única</p>
+                <p class="text-xs font-bold text-gray-400 uppercase mb-4 tracking-widest">Individual</p>
                 <div class="mb-4">
                     <span class="text-2xl font-black text-gray-900">Consultar Valor</span>
                 </div>
-                <ul class="text-sm text-gray-500 space-y-2 mb-4 flex-grow">
+                <ul class="text-sm text-gray-500 space-y-2 mb-4 flex-grow text-center">
                     <li>Dudas puntuales</li>
-                    <li>Resolución de ejercicios</li>
-                    <li>Apuntes de la clase</li>
+                    <li>Apoyo escolar o tareas</li>
+                    <li>Sesiones de 1 o 2 horas</li>
                 </ul>
                 <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20quería%20consultar%20el%20valor%20de%20clases%20individuales..." class="btn-whatsapp">Consultar</a>
             </div>
@@ -148,20 +152,26 @@
             res.classList.remove('hidden');
 
             if (t === 'urgente') {
-                res.innerText = "Sugerencia: 1 o 2 clases individuales intensivas para resolver lo urgente para mañana.";
+                res.innerText = "Sugerencia: Clase individual. Para mañana lo ideal es una sesión de 2 horas para resolver todo lo urgente.";
                 c1.classList.add('selected');
-            } else if (t === 'largo') {
-                res.innerText = "Sugerencia: Acompañamiento de 8 horas para seguimiento constante y llevar la materia al día.";
-                c3.classList.add('selected');
-                pMn.classList.remove('hidden');
             } else if (t === 'mediano') {
-                if (d === 'alta') {
-                    res.innerText = "Sugerencia: Pack de 4 horas. Según la complejidad, podemos pactar un arreglo de 6 horas.";
+                if (d === 'baja') {
+                    res.innerText = "Sugerencia: Un par de clases individuales para preparar la tarea o el apoyo escolar.";
+                    c1.classList.add('selected');
                 } else {
-                    res.innerText = "Sugerencia: El pack de 4 horas es ideal para preparar el examen con buen ritmo.";
+                    res.innerText = "Sugerencia: Pack de 4 horas para preparar el examen. Es estirable a conveniencia según la materia.";
+                    c2.classList.add('selected');
+                    pEx.classList.remove('hidden');
                 }
-                c2.classList.add('selected');
-                pEx.classList.remove('hidden');
+            } else if (t === 'largo') {
+                if (d === 'baja') {
+                    res.innerText = "Sugerencia: Pack de 4 horas para seguimiento regular y apoyo constante.";
+                    c2.classList.add('selected');
+                } else {
+                    res.innerText = "Sugerencia: Acompañamiento de 8 horas para seguimiento constante y llevar la materia al día.";
+                    c3.classList.add('selected');
+                    pMn.classList.remove('hidden');
+                }
             }
             res.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
