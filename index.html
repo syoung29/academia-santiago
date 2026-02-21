@@ -11,7 +11,7 @@
         .hero-bg { background-color: #111827; }
         .card { background: white; border-radius: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s ease; }
         .selected { border: 2px solid #2563eb; transform: scale(1.02); }
-        .btn-whatsapp { background-color: #16a34a; color: white; padding: 0.75rem; border-radius: 0.75rem; font-weight: 700; font-size: 0.875rem; display: block; margin-top: 1.5rem; transition: all 0.2s; }
+        .btn-whatsapp { background-color: #16a34a; color: white; padding: 0.75rem; border-radius: 0.75rem; font-weight: 700; font-size: 0.875rem; display: block; margin-top: 1.5rem; transition: all 0.2s; text-align: center; }
         .btn-whatsapp:hover { background-color: #15803d; transform: translateY(-2px); }
     </style>
 </head>
@@ -61,9 +61,9 @@
                 <div>
                     <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 ml-1">Tiempo disponible</label>
                     <select id="time" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium text-sm text-gray-700">
-                        <option value="extra">A largo plazo (Sin fecha fija)</option>
-                        <option value="lejos">Con margen (+15 días)</option>
-                        <option value="urgente">Próximos días / Urgente</option>
+                        <option value="largo">A largo plazo (Seguimiento)</option>
+                        <option value="mediano">A mediano plazo (+15 días)</option>
+                        <option value="urgente">Mañana / Urgente</option>
                     </select>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                     <li>Resolución de ejercicios</li>
                     <li>Apuntes de la clase</li>
                 </ul>
-                <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20quería%20consultar%20el%20valor%20de%20una%20clase%20única..." class="btn-whatsapp">Consultar</a>
+                <a href="https://wa.me/5491126799440?text=Hola%20Santiago,%20quería%20consultar%20el%20valor%20de%20clases%20individuales..." class="btn-whatsapp">Consultar</a>
             </div>
 
             <div id="p2" class="card p-8 text-center flex flex-col relative">
@@ -97,7 +97,7 @@
                 <div class="mb-4">
                     <span class="text-2xl font-black text-gray-900">Valor con Descuento</span>
                 </div>
-                <ul class="text-sm text-gray-700 space-y-2 mb-4 font-medium flex-grow">
+                <ul class="text-sm text-gray-700 space-y-2 mb-4 font-medium flex-grow text-center">
                     <li>Pack 4 Horas</li>
                     <li>Preparación intensiva</li>
                     <li>Seguimiento de temas</li>
@@ -148,21 +148,18 @@
             res.classList.remove('hidden');
 
             if (t === 'urgente') {
-                res.innerText = "Sugerencia: Una o dos clases sueltas para resolver lo más urgente.";
+                res.innerText = "Sugerencia: 1 o 2 clases individuales intensivas para resolver lo urgente para mañana.";
                 c1.classList.add('selected');
-            } else if (d === 'alta' && t === 'extra') {
-                res.innerText = "Sugerencia: Acompañamiento mensual (2 veces por semana) para llevar la materia al día.";
+            } else if (t === 'largo') {
+                res.innerText = "Sugerencia: Acompañamiento de 8 horas para seguimiento constante y llevar la materia al día.";
                 c3.classList.add('selected');
                 pMn.classList.remove('hidden');
-            } else if (d === 'alta' && t === 'lejos') {
-                res.innerText = "Sugerencia: Con un pack de 4 horas podemos preparar el examen con buen ritmo.";
-                c2.classList.add('selected');
-                pEx.classList.remove('hidden');
-            } else if (d === 'baja' && t === 'lejos') {
-                res.innerText = "Sugerencia: Con un par de clases sueltas cubrimos bien la tarea o el apoyo escolar.";
-                c1.classList.add('selected');
-            } else {
-                res.innerText = "Sugerencia: Con un pack de 4 horas estamos bien para preparar los temas.";
+            } else if (t === 'mediano') {
+                if (d === 'alta') {
+                    res.innerText = "Sugerencia: Pack de 4 horas. Según la complejidad, podemos pactar un arreglo de 6 horas.";
+                } else {
+                    res.innerText = "Sugerencia: El pack de 4 horas es ideal para preparar el examen con buen ritmo.";
+                }
                 c2.classList.add('selected');
                 pEx.classList.remove('hidden');
             }
