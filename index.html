@@ -50,16 +50,17 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div>
                     <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 ml-1">Nivel de estudio</label>
-                    <select id="diff" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium">
+                    <select id="diff" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium text-sm">
                         <option value="baja">Secundaria: Apoyo / Tarea</option>
                         <option value="media">Secundaria: Examen / Previa</option>
                         <option value="alta">Ingreso o Universidad</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 ml-1">Urgencia</label>
-                    <select id="time" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium">
-                        <option value="lejos">Con tiempo (+15 días)</option>
+                    <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 ml-1">Tiempo disponible</label>
+                    <select id="time" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-blue-500 font-medium text-sm">
+                        <option value="extra">A largo plazo (Sin fecha fija)</option>
+                        <option value="lejos">Con margen (+15 días)</option>
                         <option value="urgente">Próximos días / Urgente</option>
                     </select>
                 </div>
@@ -89,13 +90,13 @@
             </div>
 
             <div id="p2" class="card p-8 text-center flex flex-col relative">
-                <div id="pop-examen" class="hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-4 py-1 rounded-full font-bold uppercase tracking-tighter">Más pedido</div>
+                <div id="pop-examen" class="hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-4 py-1 rounded-full font-bold uppercase tracking-tighter text-center">Recomendado</div>
                 <p class="text-xs font-bold text-blue-600 uppercase mb-4 tracking-widest">Pack Examen</p>
                 <div class="mb-6">
                     <span class="text-4xl font-black text-gray-900">$76.000</span>
                     <p class="text-blue-600 text-sm font-bold mt-1 italic">$19.000 x hora</p>
                 </div>
-                <ul class="text-sm text-gray-700 space-y-2 mb-8 font-medium flex-grow">
+                <ul class="text-sm text-gray-700 space-y-2 mb-8 font-medium flex-grow text-center">
                     <li>Pack 4 Horas</li>
                     <li>Preparación intensiva</li>
                     <li>Seguimiento de temas</li>
@@ -103,7 +104,7 @@
             </div>
 
             <div id="p3" class="card p-8 text-center flex flex-col relative">
-                <div id="pop-mensual" class="hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-4 py-1 rounded-full font-bold uppercase tracking-tighter">Ideal CBC / ITBA</div>
+                <div id="pop-mensual" class="hidden absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-4 py-1 rounded-full font-bold uppercase tracking-tighter text-center border">Ideal CBC / ITBA</div>
                 <p class="text-xs font-bold text-blue-600 uppercase mb-4 tracking-widest">Acompañamiento</p>
                 <div class="mb-6">
                     <span class="text-4xl font-black text-gray-900">$144.000</span>
@@ -116,7 +117,6 @@
                     <li>Ideal Análisis, Álgebra, Física</li>
                 </ul>
             </div>
-
         </div>
 
         <footer class="hero-bg rounded-3xl p-12 text-center text-white">
@@ -125,7 +125,7 @@
                class="inline-block bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest transition-transform active:scale-95 shadow-xl">
                 Escribime al WhatsApp
             </a>
-            <div class="mt-12 pt-8 border-t border-gray-800 text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] flex flex-col md:flex-row justify-between gap-4">
+            <div class="mt-12 pt-8 border-t border-gray-800 text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] flex flex-col md:flex-row justify-between gap-4 text-center">
                 <p>santiyoung29@gmail.com</p>
                 <p>Oficina: Ciudad de la Paz y Congreso</p>
                 <p>Buenos Aires, Argentina</p>
@@ -146,14 +146,21 @@
             res.classList.remove('hidden');
 
             if (t === 'urgente') {
-                res.innerText = "Sugerencia: Clase única para resolver lo más urgente.";
+                res.innerText = "Sugerencia: Una o dos clases sueltas para resolver lo más urgente.";
                 c1.classList.add('selected');
-            } else if (d === 'alta') {
-                res.innerText = "Sugerencia: Acompañamiento mensual (2 veces por semana) para materias universitarias.";
+            } else if (d === 'baja' && t === 'lejos') {
+                res.innerText = "Sugerencia: Con un par de clases sueltas cubrimos bien la tarea o el apoyo escolar.";
+                c1.classList.add('selected');
+            } else if (d === 'alta' && t === 'extra') {
+                res.innerText = "Sugerencia: Acompañamiento mensual (2 veces por semana) para llevar la materia al día.";
                 c3.classList.add('selected');
                 pMn.classList.remove('hidden');
+            } else if (d === 'alta' && t === 'lejos') {
+                res.innerText = "Sugerencia: Con un pack de 4 horas podemos preparar el examen con buen ritmo.";
+                c2.classList.add('selected');
+                pEx.classList.remove('hidden');
             } else {
-                res.innerText = "Sugerencia: Con un pack de 4 horas estamos bien para preparar el examen.";
+                res.innerText = "Sugerencia: Con un pack de 4 horas estamos bien para preparar los temas.";
                 c2.classList.add('selected');
                 pEx.classList.remove('hidden');
             }
